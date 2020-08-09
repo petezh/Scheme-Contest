@@ -26,8 +26,7 @@
 
   ; letter stuff
   (define (lh x y)
-    (seth 0) (color "#D0D0CE")
-    (penup) (setposition x y) (pendown))
+    (seth 0) (penup) (setposition x y) (pendown))
 
   ;; Stars
   ;; to do: make asterisk, fix distribution
@@ -67,24 +66,24 @@
   (define percentlen .90)
   (define twistspd -10)
 
-  	(define (draw-spine len bearing velocity)
-  		(cond
-  			((< len 10)
-  				(begin (fd len) (end_fill))
-  			) (else
-  				(begin (setheading bearing) (fd len) (end_fill) (begin_fill) (bk (* .8 len))) 
-  				(draw-spine (* percentlen len) (+ bearing twistspd) velocity)
-  			)
-  		)
-  	)
+  (define (draw-spine len bearing velocity)
+    (cond
+      ((< len 10)
+        (begin (fd len) (end_fill))
+      ) (else
+        (begin (setheading bearing) (fd len) (end_fill) (begin_fill) (bk (* .8 len))) 
+        (draw-spine (* percentlen len) (+ bearing twistspd) velocity)
+      )
+    )
+  )
 
 	(define (draw-rect width len)
 		(begin_fill) (bk width) (rt 90) (fd len) (lt 90) (fd width) (lt 90) (fd len) (rt 90) (end_fill))
 	
-	(define (draw-lambda x y scale)
-		(lh x y)
+	(define (draw-lambda x y scale c)
+		(lh x y) (color c)
 		(draw-spine (* 50 scale) 90 10)
-		(lh x y)
+		(lh x y) (color c)
 		(pu)
 		(fd (* 5 scale))
 		(seth 90) (fd (* 75 scale))
@@ -93,8 +92,7 @@
 		(draw-rect (* 40 scale) (* 10 scale))
 		(seth 90)
 		(draw-rect (* 12 scale) (* 5 scale))
-		)
-	(draw-lambda -400 20 3)
+	) (draw-lambda -400 20 3 scheme-red)
 
 
   ;; Astronaut helmet
@@ -234,7 +232,8 @@
   (lh 350 250)
   (johns-face)
 
-  ;; SCHEMEx
+  ;; SCHEME
+  (color "#D0D0CE")
   (let-s -331 215 25)
   (let-c -311 215 25)
   (let-h -305 215 25)
