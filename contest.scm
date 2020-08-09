@@ -32,7 +32,7 @@
   (define (let-w x y s) (lh x y) (rt 165) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))))
   (define (let-y x y s) (lh x y) (rt 150) (fd (/ s sqrt3)) (rt 30) (fd (/ s 2)) (bk (/ s 2)) (lt 150) (fd (/ s sqrt3)))
   (define (let-s x y s) (lh x y) (lt 135) (fd (/ s 2sqrt2)) (lt 90) (fd (/ s sqrt2)) (rt 90) (fd (/ s 2sqrt2)))
-  ;; (define (let-s x y s) (lh x y) (penup) (bk (/ s 4)) (pendown) (circle 4 90) (penup) (bk (/ s 2)) (pendown) (circle 5 90))
+  ;; (define (let-s x y s) (let-c x y (/ s 2)) (lh x (- y s)) (seth 90) (circle (/ s 4) 180))
   (define (let-h x y s) (lh x y) (bk s) (fd (/ s 2)) (rt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)) (bk s))
   (define (let-b x y s) (lh x y) (bk s) (rt 45) (fd (/ s 2sqrt2)) (lt 90) (fd (/ s 2sqrt2)) (rt 90) (fd (/ s 2sqrt2)) (lt 90) (fd (/ s 2sqrt2)))
   (define (let-e x y s) (lh x y) (rt 90) (fd s) (lh x y) (bk s) (rt 90) (fd s) (lh x y) (bk (* s 2)) (rt 90) (fd s) )
@@ -40,24 +40,19 @@
   (define (let-i x y s) (lh x y) (rt 90) (fd (/ s 2)) (bk (/ s 4)) (lt 90) (bk s) (rt 90) (fd (/ s 4)) (bk (/ s 2)))
   (define (let-t x y s) (lh x y) (rt 90) (fd s) (bk (/ s 2)) (rt 90) (fd s))
   (define (let-c x y s) (lh x y) (rt 45) (bk (/ s sqrt2)) (lt 90) (bk (/ s sqrt2)))
+  ;; (define (let-c x y s) (lh x y) (seth -90) (circle (/ s 2) 180))
   (define (let-m x y s) (lh x y) (rt 15) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))))
   (define (let-6 x y s) (lh x y) (bk s) (rt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)))
   (define (let-1 x y s) (lh x y) (rt 45) (bk (/ s 6)) (lh x y) (bk s))
   (define (let-k x y s) (lh x y) (bk s) (fd (/ s 2)) (rt 45) (fd (/ s sqrt2)) (lt x y) (bk (/ s 2)) (rt 45) (bd (/ s sqrt2)))
 
-  (speed 0)
-  (penup)
-
-  ; Circle
-  (setposition 40 206)
-  (color "#D0D0CE")
-  (circle 0 180)
+  ;; Circle
+  ;; (lh -95 100)
+  ;; (color "#2F62F6")
+  ;; (circle 125 360)
 
 
-  ;; (let-c 0   455  15)
-
-
-  ;; SCHEME
+  ;; ;; SCHEME
   (let-s -296 155 25)
   (let-c -276 155 25)
   (let-h -270 155 25)
@@ -99,7 +94,7 @@
 
   (let-l 175  -55 25)
   (let-l 192  -55 25)
-  (let-s 213  -55 25)
+  (let-s 210  -55 25)
 
 
   (exitonclick))
