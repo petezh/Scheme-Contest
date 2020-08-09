@@ -26,7 +26,7 @@
 
   ; letter stuff
   (define (lh x y)
-    (seth 0)
+    (seth 0) (color "#D0D0CE")
     (penup) (setposition x y) (pendown))
 
   ;; Stars
@@ -82,9 +82,9 @@
 		(begin_fill) (bk width) (rt 90) (fd len) (lt 90) (fd width) (lt 90) (fd len) (rt 90) (end_fill))
 	
 	(define (draw-lambda x y scale)
-		(lh x y) (color scheme-red)
+		(lh x y)
 		(draw-spine (* 50 scale) 90 10)
-		(lh x y) (color scheme-red)
+		(lh x y)
 		(pu)
 		(fd (* 5 scale))
 		(seth 90) (fd (* 75 scale))
@@ -94,8 +94,7 @@
 		(seth 90)
 		(draw-rect (* 12 scale) (* 5 scale))
 		)
-	(color scheme-red)
-  (draw-lambda -400 20 3)
+	(draw-lambda -400 20 3)
 
 
   ;; Astronaut helmet
@@ -110,9 +109,9 @@
   ;; Astronaut body
   (color "#C7CAC7")
   (lh -69 -190)
-  (draw-rect 200 145)
+  (draw-rect 185 145)
   ;; Astronaut 61a
-  (color scheme-red)
+  (color "#ED3833")
   (let-6 30 -155 5)
   (let-1 35 -155 5)
   (let-a 40 -155 5)
@@ -135,86 +134,86 @@
   ;(color "#ffd9b3")
   (color "#ffceb4")
   (begin_fill)
-  (circle 100 180)
-  (forward 80)
-  (circle 100 180)
-  (forward 80)
+  (circle 50 180)
+  (forward 40)
+  (circle 50 180)
+  (forward 40)
   (end_fill)
-  (backward 32)
-  (left 180)
-  (forward 200)
+  (backward 16)
+  (left 90)
+  (forward 100)
   (glasses)
-  (backward 24)
+  (backward 12)
   (seth -90)
-  (forward 40)
+  (forward 20)
   (color "#000000")
   (begin_fill)
-  (circle 10)
+  (circle 5)
   (end_fill)
   (color "#3D3331")
   (begin_fill)
-  (circle 4)
+  (circle 2)
   (end_fill)
-  (forward 92)
+  (forward 46)
   (color "#000000")
   (begin_fill)
-  (circle 10)
+  (circle 5)
   (end_fill)
   (color "#3D3331")
   (begin_fill)
-  (circle 4)
+  (circle 2)
   (end_fill)
-  (backward 46)
+  (backward 23)
   (seth 180)
-  (forward 40)
+  (forward 20)
   (pendown)
   ;nose
-  (right 60) (forward 20) (seth 90) (forward 10)
+  (right 30) (forward 10) (seth 90) (forward 5)
   ;end nose
-  (penup) (right 180) (forward 30) (seth 90) (pendown)
+  (penup) (right 90) (forward 15) (seth 90) (pendown)
   ;mouth
-  (circle 40 45) (right 360) (circle -40 90)
+  (circle 20 45) (right 180) (circle -20 90)
   ;end mouth
-  (penup) (right 360) (circle -40 45) (seth 0) (forward 140) (seth -90)
+  (penup) (right 180) (circle -20 45) (seth 0) (forward 70) (seth -90)
   ;left brow
-  (pendown) (forward 50) (left 90) (forward 20)
+  (pendown) (forward 25) (left 45) (forward 10)
   ;end left brow
-  (penup) (backward 20) (right 90) (backward 80) (seth 90) (pendown)
+  (penup) (backward 10) (right 45) (backward 40) (seth 90) (pendown)
   ;right brow
-  (forward 50) (right 90) (forward 20)
+  (forward 25) (right 45) (forward 10)
   ;end right brow
-  (penup) (seth 180) (forward 20) (right 180) (forward 184) (seth 0)
+  (penup) (seth 180) (forward 10) (right 90) (forward 92) (seth 0)
   ;begin hair
-  (color "#3D3331")  (righttriangle 50 100)  (forward 100)  (begin_fill)  (right 60)  (forward 70)  (seth 90)  (forward 140)
-  (seth 180) (left 60)  (forward 70)  (end_fill)  (seth 180)  (forward 100)  (seth 0)  (righttriangle -50 100)
+  (color "#3D3331")  (righttriangle 25 50)  (forward 50)  (begin_fill)  (right 30)  (forward 35)  (seth 90)  (forward 70)
+  (seth 180) (left 30)  (forward 35)  (end_fill)  (seth 180)  (forward 50)  (seth 0)  (righttriangle -25 50)
   ;end hair
-  (seth -90)  (forward 180)  (left 180)  (forward 170)
+  (seth -90)  (forward 90)  (left 90)  (forward 85)
 )
 
 (define (glasses)
   (seth 180)
-  (left 74)
+  (left 37)
   (pendown)
   (color "black")
-  (forward 24) ;left ear thing
+  (forward 12) ;left ear thing
   (define (frame)
     (seth 0)
-    (backward 20)
-    (rectangle 80 40)
+    (backward 10)
+    (rectangle 40 20)
     (penup)
-    (forward 20)
-    (right 180)
-    (forward 80)
+    (forward 10)
+    (right 90)
+    (forward 40)
   )
   (frame)
   (pendown)
-  (forward 12) ;middle thing
+  (forward 6) ;middle thing
   (frame)
   (pendown)
   (seth 0)
-  (right 74)
+  (right 37)
   (pendown)
-  (forward 24) ;right ear thing
+  (forward 12) ;right ear thing
   (penup)
 )
 
@@ -235,8 +234,7 @@
   (lh 350 250)
   (johns-face)
 
-  ;; SCHEME
-  (color "#D0D0CE")
+  ;; SCHEMEx
   (let-s -331 215 25)
   (let-c -311 215 25)
   (let-h -305 215 25)
