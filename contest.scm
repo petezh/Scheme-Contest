@@ -111,14 +111,7 @@
   (end_fill)
   ;; Astronaut body
   (color "#C7CAC7")
-  (seth 180)
-  (circle 25 180)
-  (lh 25 -195)
-  (fd 20)
-  (lh 75 -195)
-  (fd 20)
-  (seth -180)
-  (circle 25 180)
+  (draw-rect 50 20)
   ;; Astronaut 61a
   (let-6 30 -155 5)
   (let-1 35 -155 5)
