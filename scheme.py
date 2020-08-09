@@ -871,7 +871,7 @@ def run(*argv):
             lines = args.file.readlines()
             def next_line():
                 return buffer_lines(lines)
-            interactive = False
+            interactive = False 
 
     read_eval_print_loop(next_line, create_global_frame(), startup=True,
                          interactive=interactive, load_files=load_files)

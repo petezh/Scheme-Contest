@@ -4,6 +4,7 @@ from __future__ import print_function  # Python 2 compatibility
 
 import math
 import numbers
+import builtins
 import operator
 import sys
 from scheme_reader import Pair, nil, repl_str
@@ -478,7 +479,7 @@ def tscheme_setposition(x, y):
 def tscheme_setheading(h):
     """Set the turtle's heading H degrees clockwise from north (up)."""
     _check_nums(h)
-    _tscheme_prep() 
+    _tscheme_prep()
     turtle.setheading(h)
 
 @builtin("penup", "pu")

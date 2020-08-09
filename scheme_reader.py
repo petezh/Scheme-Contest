@@ -126,7 +126,7 @@ def scheme_read(src):
     1
     >>> scheme_read(Buffer(tokenize_lines(['true'])))
     True
-    >>> scheme_read(Buffer(tokenize_lines(['(+ 1 2)']))
+    >>> scheme_read(Buffer(tokenize_lines(['(+ 1 2)'])))
     Pair('+', Pair(1, Pair(2, nil)))
     """
     if src.current() is None:
