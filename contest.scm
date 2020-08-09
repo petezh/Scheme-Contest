@@ -41,8 +41,8 @@
   (define (let-t x y s) (lh x y) (rt 90) (fd s) (bk (/ s 2)) (rt 90) (fd s))
   (define (let-c x y s) (lh x y) (rt 45) (bk (/ s sqrt2)) (lt 90) (bk (/ s sqrt2)))
   (define (let-m x y s) (lh x y) (rt 15) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))))
-  (define (let-1 x y s) (lh x y) (rt 45) (bk (/ s 6)) (lh x y) (bk s))
   (define (let-6 x y s) (lh x y) (bk s) (rt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)))
+  (define (let-1 x y s) (lh x y) (rt 45) (bk (/ s 6)) (lh x y) (bk s))
   (define (let-k x y s) (lh x y) (bk s) (fd (/ s 2)) (rt 45) (fd (/ s sqrt2)) (lt x y) (bk (/ s 2)) (rt 45) (bd (/ s sqrt2)))
 
   (speed 0)
@@ -99,6 +99,8 @@
 
   (let-l 175  -55 25)
   (let-l 192  -55 25)
+  (let-s 213  -55 25)
+
 
   (exitonclick))
 
