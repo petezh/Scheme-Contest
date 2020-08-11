@@ -129,7 +129,6 @@
 
 (define (johns-face)
   (seth 0)
-  ;(color "#ffd9b3")
   (color "#ffceb4")
   (begin_fill)
   (circle 50 180)
@@ -279,10 +278,17 @@
   (let-? 200  -55 25)
 
   ;; EECS
-  (let-e 325  75 4)
-  (let-e 330  75 4)
-  (let-c 325  85 10)
-  (let-s 330  85 10)
+  (color "#083362")
+  (lh 312 30)
+  (begin_fill)
+  (rectangle 50 50)
+  (end_fill)
+  (color "#46B4E5")
+  (let-e 325  75 10)
+  (let-e 340  75 10)
+  (color "#F6B142")
+  (let-c 335  45 15)
+  (let-s 345  45 15)
 
   (exitonclick))
 
