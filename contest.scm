@@ -57,8 +57,11 @@
   (lh -275 275)
   (color "#2F62F6")
   (seth -90)
-  (define (circle-h n) (circle n 360) (if (equal? n 0) nil (circle-h (- n 1))))
-  (circle-h 175)
+  (define (circle-l n) (circle n 180) (if (equal? n 0) nil (circle-h (- n 1))))
+  ;; (define (circle-r n) (circle n 180) (if (equal? n 0) nil (circle-h (- n 1))))
+  ;; (define (circle-h n) (circle n 360) (if (equal? n 0) nil (circle-h (- n 1))))
+  ;; (circle-h 175)
+  (circle-l 175)
 
   ;; Scheme logo
   (lh -275 175)
