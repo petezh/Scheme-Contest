@@ -2,7 +2,7 @@
 ;
 ; Please do not include your name or personal info in this file.
 ;
-; Title: <Your title here>
+; Title: Denero's Devilish Scheme
 ;
 ; Description:
 ;   <It's your masterpiece.
@@ -180,7 +180,7 @@
   (forward 40)
   (pendown)
   ;nose
-  (right 30) (forward 20) (seth 90) (forward 10)
+  (right 30) (forward 20) (seth 90) (forward 10) 
   ;end nose
   (penup) (right 90) (forward 30) (seth 90) (pendown)
   ;mouth
@@ -196,8 +196,8 @@
   ;end right brow
   (penup) (seth 180) (forward 20) (right 90) (forward 184) (seth 0)
   ;begin hair
-  (color "#3D3331")  (righttriangle 50 100)  (forward 100)  (begin_fill)  (right 30)  (forward 70)  (seth 90)  (forward 140)
-  (seth 180) (left 30)  (forward 70)  (end_fill)  (seth 180)  (forward 100)  (seth 0)  (righttriangle -50 100)
+  (color "#3D3331")  (righttriangle 50 100) (forward 50) (righttriangle 80 50)   (forward 50)  (begin_fill)  (right 30)  (forward 70)  (seth 90)  (forward 140)
+  (seth 180) (left 30)  (forward 70)  (end_fill)  (seth 180)  (forward 50)  (seth 0) (righttriangle -80 50) (backward 50) (righttriangle -50 100)
   ;end hair
   (seth -90)  (forward 180)  (left 90)  (forward 170)
 )
@@ -302,21 +302,21 @@
   (let-e -235 216 12)
 
   ; ALWAYS HAS BEEN
-  (let-a -60   350 40)
-  (let-l -30  350 40)
-  (let-w 0  350 40)
-  (let-a 75  350 40)
-  (let-y 90  350 40)
-  (let-s 130  350 40)
+  (let-a -120  350 60)
+  (let-l -80   350 60)
+  (let-w -55   353 60)
+  (let-a  40   350 60)
+  (let-y  65   350 60)
+  (let-s  115  350 60)
 
-  (let-h 170 350 40)
-  (let-a 220 350 40)
-  (let-s 260 350 40)
+  (let-h 155 350 60)
+  (let-a 223 350 60)
+  (let-s 259 350 60)
 
-  (let-b 310 350 40)
-  (let-e 340 350 20)
-  (let-e 370 350 20)
-  (let-n 400 310 36)
+  (let-b 309 350 60)
+  (let-e 329 350 30)
+  (let-e 369 350 30)
+  (let-n 420 290 55)
 
 
   ; WAIT, IT'S ALL LINKED LISTS?
