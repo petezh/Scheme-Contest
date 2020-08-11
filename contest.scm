@@ -1,13 +1,13 @@
-;;; Scheme Recursive Art Contest Entry
-;;;
-;;; Please do not include your name or personal info in this file.
-;;;
-;;; Title: <Your title here>
-;;;
-;;; Description:
-;;;   <It's your masterpiece.
-;;;    Use these three lines to describe
-;;;    its inner meaning.>
+; Scheme Recursive Art Contest Entry
+;
+; Please do not include your name or personal info in this file.
+;
+; Title: <Your title here>
+;
+; Description:
+;   <It's your masterpiece.
+;    Use these three lines to describe
+;    its inner meaning.>
 
 (define (draw)
   ; YOUR CODE HERE
@@ -19,7 +19,7 @@
   (define (repeat k fn) (fn) (if (> k 1) (repeat (- k 1) fn)))
   (define (tri fn) (repeat 3 (lambda () (fn) (lt 120))))
   
-  ;; config stuff
+  ; config stuff
   (bgcolor "#030306")
   (define scheme-red "#ED3833")
   (define scheme-blue "#1230B4")
@@ -28,8 +28,8 @@
   (define (lh x y)
     (seth 0) (penup) (setposition x y) (pendown))
 
-  ;; Stars
-  ;; to do: make asterisk, fix distribution
+  ; Stars
+  ; to do: make asterisk, fix distribution
   (lh 0 0)
   (color "#ffffff")
   (define (stars-h n x y) (lh (- x 500) (- y 500)) (circle 2 360) (if (equal? n 0) nil (stars-h (- n 1) (modulo (+ x 420) 1000) (modulo (+ 177 y) 1000))))
@@ -39,7 +39,7 @@
   (define (let-l x y s) (lh x y) (bk s) (rt 90) (fd (/ s 2)))
   (define (let-w x y s) (lh x y) (rt 165) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))))
   (define (let-y x y s) (lh x y) (rt 150) (fd (/ s sqrt3)) (rt 30) (fd (/ s 2)) (bk (/ s 2)) (lt 150) (fd (/ s sqrt3)))
-  (define (let-s x y s) (let-c x y (/ s 2)) (lh x (- y s)) (seth 90) (circle (/ s 4) 180)) ;; do later maybe
+  (define (let-s x y s) (let-c x y (/ s 2)) (lh x (- y s)) (seth 90) (circle (/ s 4) 180)) ; do later maybe
   (define (let-h x y s) (lh x y) (bk s) (fd (/ s 2)) (rt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)) (bk s))
   (define (let-b x y s) (lh x y) (bk s) (rt 45) (fd (/ s 2sqrt2)) (lt 90) (fd (/ s 2sqrt2)) (rt 90) (fd (/ s 2sqrt2)) (lt 90) (fd (/ s 2sqrt2)))
   (define (let-e x y s) (lh x y) (rt 90) (fd s) (lh x y) (bk s) (rt 90) (fd s) (lh x y) (bk (* s 2)) (rt 90) (fd s) )
@@ -50,20 +50,18 @@
   (define (let-m x y s) (lh x y) (rt 15) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))) (lt 150) (fd (/ s (/ sqrt3 2))) (rt 150) (fd (/ s (/ sqrt3 2))))
   (define (let-6 x y s) (lh x y) (bk s) (rt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)) (lt 90) (fd (/ s 2)))
   (define (let-1 x y s) (lh x y) (rt 45) (bk (/ s 6)) (lh x y) (bk s))
-  (define (let-k x y s) (lh x y) (bk s) (fd (/ s 2)) (rt 45) (fd (/ s sqrt2)) (lt x y) (bk (/ s 2)) (rt 45) (bd (/ s sqrt2)))
+  (define (let-k x y s) (lh x y) (bk s) (fd (/ s 2)) (rt 45) (fd (/ s sqrt2)) (lh x y) (bk (/ s 2)) (lt 45) (bk (/ s sqrt2)))
   (define (let-? x y s) (lh x y) (lh x (- y (/ s 2))) (seth 90) (circle (/ s 4) 180) (lh x y) (pu) (bk s) (pd) (fd (/ s 25)) (lh x y) (pu) (bk (/ s 1.2)) (pd) (fd (/ s 2.5)) (pu))
+  (define (let-d x y s) (lh x y) (seth 90) (circle (/ s 2) 180) (lh x y) (fd s))
 
-  ;; Scheme Circle
+  ; Scheme Circle
   (lh -275 275)
   (color "#2F62F6")
   (seth -90)
-  (define (circle-l n) (circle n 180) (if (equal? n 0) nil (circle-h (- n 1))))
-  ;; (define (circle-r n) (circle n 180) (if (equal? n 0) nil (circle-h (- n 1))))
-  ;; (define (circle-h n) (circle n 360) (if (equal? n 0) nil (circle-h (- n 1))))
-  ;; (circle-h 175)
-  (circle-l 175)
+  (define (circle-b n) (circle n 180) (if (equal? n 0) nil (circle-b (- n 1))))
+  (circle-b 175)
 
-  ;; Scheme logo
+  ; Scheme logo
   (lh -275 175)
   (color scheme-red)
   (define percentlen .90)
@@ -94,31 +92,43 @@
 		(pd)
 		(draw-rect (* 40 scale) (* 10 scale))
 		(seth 90)
-		(draw-rect (* 12 scale) (* 5 scale))
-	) (draw-lambda -400 20 3 scheme-red)
+		(draw-rect (* 12 scale) (* 5 scale)))
+	(draw-lambda -400 20 3 "#4CA954")
 
 
-  ;; Astronaut helmet
+  ; Astronaut helmet
   (lh 75 -145)
   (color "#C7CAC7")
-  (circle 55 360)
+  (circle 60 360)
+  
   (lh 65 -145)
   (begin_fill)
   (color "#A3F9F8")
-  (circle 45 360)
+  (circle 50 360)
   (end_fill)
-  ;; Astronaut body
+  ; Astronaut body
   (color "#C7CAC7")
-  (lh -69 -190)
-  (draw-rect 185 145)
-  ;; Astronaut 61a
+  (begin_fill)
+  (lh 90 -300)
+  (circle 75 180)
+  (lt 90)
+  (fd 150)
+  (end_fill)
+  (lh -60 -300)
+  (draw-rect 200 150)
+  ; Astronaut arm
+  (color "#adb1ad")
+  (lh 15 -320)
+  (draw-rect 150 60)
+  ; Astronaut 61a
   (color "#ED3833")
-  (let-6 30 -155 5)
-  (let-1 35 -155 5)
-  (let-a 40 -155 5)
+  (let-6 0 -140 20)
+  (let-1 15 -140 20)
+  (let-a 30 -140 20)
 
 
-  ;; Denero
+
+  ; Denero
   (define (righttriangle horizontal vertical)
   (begin_fill)
   (forward vertical)
@@ -132,62 +142,64 @@
 
 (define (johns-face)
   (seth 0)
+
+  ;(color "#ffd9b3")
   (color "#ffceb4")
   (begin_fill)
-  (circle 50 180)
-  (forward 40)
-  (circle 50 180)
-  (forward 40)
+  (circle 100 180)
+  (forward 80)
+  (circle 100 180)
+  (forward 80)
   (end_fill)
-  (backward 16)
+  (backward 32)
   (left 90)
-  (forward 100)
+  (forward 200)
   (glasses)
-  (backward 12)
+  (backward 24)
   (seth -90)
-  (forward 20)
+  (forward 40)
   (color "#000000")
   (begin_fill)
-  (circle 5)
+  (circle 10)
   (end_fill)
   (color "#3D3331")
   (begin_fill)
-  (circle 2)
+  (circle 10)
   (end_fill)
-  (forward 46)
+  (forward 92)
   (color "#000000")
   (begin_fill)
-  (circle 5)
+  (circle 10)
   (end_fill)
   (color "#3D3331")
   (begin_fill)
-  (circle 2)
+  (circle 4)
   (end_fill)
-  (backward 23)
+  (backward 46)
   (seth 180)
-  (forward 20)
+  (forward 40)
   (pendown)
   ;nose
-  (right 30) (forward 10) (seth 90) (forward 5)
+  (right 30) (forward 20) (seth 90) (forward 10)
   ;end nose
-  (penup) (right 90) (forward 15) (seth 90) (pendown)
+  (penup) (right 90) (forward 30) (seth 90) (pendown)
   ;mouth
-  (circle 20 45) (right 180) (circle -20 90)
+  (circle 40 45) (right 180) (circle -40 90)
   ;end mouth
-  (penup) (right 180) (circle -20 45) (seth 0) (forward 70) (seth -90)
+  (penup) (right 180) (circle -40 45) (seth 0) (forward 140) (seth -90)
   ;left brow
-  (pendown) (forward 25) (left 45) (forward 10)
+  (pendown) (forward 50) (left 45) (forward 20)
   ;end left brow
-  (penup) (backward 10) (right 45) (backward 40) (seth 90) (pendown)
+  (penup) (backward 20) (right 45) (backward 80) (seth 90) (pendown)
   ;right brow
-  (forward 25) (right 45) (forward 10)
+  (forward 50) (right 45) (forward 20)
   ;end right brow
-  (penup) (seth 180) (forward 10) (right 90) (forward 92) (seth 0)
+  (penup) (seth 180) (forward 20) (right 90) (forward 184) (seth 0)
   ;begin hair
-  (color "#3D3331")  (righttriangle 25 50)  (forward 50)  (begin_fill)  (right 30)  (forward 35)  (seth 90)  (forward 70)
-  (seth 180) (left 30)  (forward 35)  (end_fill)  (seth 180)  (forward 50)  (seth 0)  (righttriangle -25 50)
+  (color "#3D3331")  (righttriangle 50 100)  (forward 100)  (begin_fill)  (right 30)  (forward 70)  (seth 90)  (forward 140)
+  (seth 180) (left 30)  (forward 70)  (end_fill)  (seth 180)  (forward 100)  (seth 0)  (righttriangle -50 100)
   ;end hair
-  (seth -90)  (forward 90)  (left 90)  (forward 85)
+  (seth -90)  (forward 180)  (left 90)  (forward 170)
 )
 
 (define (glasses)
@@ -195,25 +207,25 @@
   (left 37)
   (pendown)
   (color "black")
-  (forward 12) ;left ear thing
+  (forward 24) ;left ear thing
   (define (frame)
     (seth 0)
-    (backward 10)
-    (rectangle 40 20)
+    (backward 20)
+    (rectangle 80 40)
     (penup)
-    (forward 10)
+    (forward 20)
     (right 90)
-    (forward 40)
+    (forward 80)
   )
   (frame)
   (pendown)
-  (forward 6) ;middle thing
+  (forward 12) ;middle thing
   (frame)
   (pendown)
   (seth 0)
   (right 37)
   (pendown)
-  (forward 12) ;right ear thing
+  (forward 24) ;right ear thing
   (penup)
 )
 
@@ -230,68 +242,122 @@
 
 )
 
-  ;; DRAW FACE
-  (lh 350 250)
+; John body
+; back arm
+(color "#adb1ad")
+  (lh 200 -200)
+  (seth -60)
+  (draw-rect 200 60)
+  (color "#C7CAC7")
+  (begin_fill)
+  (lh 500 -150)
+  (circle 100 180)
+  (lt 90)
+  (fd 200)
+  (end_fill)
+  (lh 300 -150)
+  (draw-rect 400 200)
+  (color "#adb1ad")
+  (lh 360 -120)
+  (draw-rect 200 100)
+  (lh 350 -460)
+  (seth -150)
+  (draw-rect 200 75)
+  ;john gun
+  (color "#545954")
+  (lh 220 -160)
+  (draw-rect 60 20)
+  (lh 200 -170)
+  (draw-rect 20 5)
+  (lh 200 -185)
+  (draw-rect 5 20)
+  
+  (color "#C7CAC7")
+  (lh 220 -160)
+  (seth 90)
+  (draw-rect 80 20)
+  
+  (color "#adb1ad")
+  (rt 90)
+  (fd 5)
+  (lt 90)
+  (draw-rect 80 5)
+  
+  ; John face
+  (lh 480 70)
   (johns-face)
 
-  ;; SCHEME
-  (color "#D0D0CE")
-  (let-s -331 215 25)
-  (let-c -311 215 25)
-  (let-h -305 215 25)
-  (let-e -285 215 12)
-  (let-m -270 190 25)
-  (let-e -235 215 12)
+  ; John helmet
+  (lh 500 30)
+  (color "#C7CAC7")
+  (circle 120 360)
 
-  ;; ALWAYS HAS BEEN
-  (let-a 0   455 25)
-  (let-l 14  455 25)
-  (let-w 22  455 25)
-  (let-a 65  455 25)
-  (let-y 75  455 25)
-  (let-s 97  455 25)
+  ; SCHEME
+  (color "#5beb34")
+  (let-s -331 216 25)
+  (let-c -311 216 25)
+  (let-h -305 216 25)
+  (let-e -285 216 12)
+  (let-m -270 191 25)
+  (let-e -235 216 12)
 
-  (let-h 115 455 25)
-  (let-a 144 455 25)
-  (let-s 159 455 25)
+  ; ALWAYS HAS BEEN
+  (let-a -60   350 40)
+  (let-l -30  350 40)
+  (let-w 0  350 40)
+  (let-a 75  350 40)
+  (let-y 90  350 40)
+  (let-s 130  350 40)
 
-  (let-b 177 455 25)
-  (let-e 187 455 12)
-  (let-e 203 455 12)
-  (let-n 220 430 23)
+  (let-h 170 350 40)
+  (let-a 220 350 40)
+  (let-s 260 350 40)
+
+  (let-b 310 350 40)
+  (let-e 340 350 20)
+  (let-e 370 350 20)
+  (let-n 400 310 36)
 
 
-  ;; WAIT, IT'S ALL LINKED LISTS?
-  (let-w -120 -55 25)
-  (let-a -77  -55 25)
-  (let-i -60  -55 25)
-  (let-t -45  -55 25)
+  ; WAIT, IT'S ALL LINKED LISTS?
+  (let-w -260 -55 25)
+  (let-a -217 -55 25)
+  (let-i -200 -55 25)
+  (let-t -185  -55 25)
 
-  (let-i 5   -55 25)
-  (let-t 20   -55 25)
-  (let-s 53   -55 25)
+  (let-i -135  -55 25)
+  (let-t -120  -55 25)
+  (let-s  -87  -55 25)
 
-  (let-a 90  -55 25)
-  (let-l 107  -55 25)
-  (let-l 124  -55 25)
+  (let-a  -50  -55 25)
+  (let-l  -33  -55 25)
+  (let-l  -16  -55 25)
 
-  (let-l 155  -55 25)
-  (let-l 172  -55 25)
-  (let-s 190  -55 25)
-  (let-? 200  -55 25)
+  (let-l 15  -55 25)
+  (let-i 30  -55 25)
+  (let-n 45  -80 23)
+  (let-k 75  -55 25)
+  (let-e 95  -55 12)
+  (let-d 110  -80 25)
+  (let-l 135  -55 25)
+  (let-i 150  -55 25)
+  (let-s 174  -55 25)
+  (let-t 178  -55 25)
+  (let-s 208  -55 25)
+  (let-? 218  -55 25)
 
-  ;; EECS
+  ; EECS
   (color "#083362")
-  (lh 312 30)
+  (lh 382 -170)
   (begin_fill)
   (rectangle 50 50)
   (end_fill)
   (color "#46B4E5")
-  (let-e 325  75 10)
-  (let-e 340  75 10)
+  (let-e 395  -125 10)
+  (let-e 410  -125 10)
   (color "#F6B142")
-  (let-c 335  45 15)
-  (let-s 345  45 15)
+  (let-c 405  -155 15)
+  (let-s 415  -155 15)
 
   (exitonclick))
 
