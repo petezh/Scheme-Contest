@@ -157,49 +157,66 @@
   (glasses)
   (backward 24)
   (seth -90)
-  (forward 40)
-  (color "#000000")
-  (begin_fill)
-  (circle 10)
-  (end_fill)
-  (color "#3D3331")
-  (begin_fill)
-  (circle 10)
-  (end_fill)
-  (forward 92)
-  (color "#000000")
-  (begin_fill)
-  (circle 10)
-  (end_fill)
-  (color "#3D3331")
-  (begin_fill)
-  (circle 4)
-  (end_fill)
-  (backward 46)
-  (seth 180)
-  (forward 40)
-  (pendown)
-  ;nose
-  (right 30) (forward 20) (seth 90) (forward 10) 
-  ;end nose
-  (penup) (right 90) (forward 30) (seth 90) (pendown)
-  ;mouth
-  (circle 40 45) (right 180) (circle -40 90)
-  ;end mouth
-  (penup) (right 180) (circle -40 45) (seth 0) (forward 140) (seth -90)
-  ;left brow
-  (pendown) (forward 50) (left 45) (forward 20)
-  ;end left brow
-  (penup) (backward 20) (right 45) (backward 80) (seth 90) (pendown)
-  ;right brow
-  (forward 50) (right 45) (forward 20)
-  ;end right brow
-  (penup) (seth 180) (forward 20) (right 90) (forward 184) (seth 0)
-  ;begin hair
-  (color "#3D3331")  (righttriangle 50 100) (forward 50) (righttriangle 80 50)   (forward 50)  (begin_fill)  (right 30)  (forward 70)  (seth 90)  (forward 140)
-  (seth 180) (left 30)  (forward 70)  (end_fill)  (seth 180)  (forward 50)  (seth 0) (righttriangle -80 50) (backward 50) (righttriangle -50 100)
-  ;end hair
-  (seth -90)  (forward 180)  (left 90)  (forward 170)
+  (forward 40)	
+  (color "#3D3331")	
+  (begin_fill)	
+  (circle 10)	
+  (end_fill)	
+  (lt 90)	
+  (forward 10)	
+  (color "#000000")	
+  (begin_fill)	
+  (circle 4)	
+  (end_fill)	
+  (backward 10)	
+  (rt 90)	
+  (forward 92)	
+  (color "#3D3331")	
+  (begin_fill)	
+  (circle 10)	
+  (end_fill)	
+  (color "#000000")	
+  	
+  (lt 90)	
+  (forward 10)	
+  (begin_fill)	
+  (circle 4)	
+  (end_fill)	
+  	
+  (backward 10)	
+  (rt 90)	
+  (backward 46)	
+  (seth 180)	
+  (forward 40)	
+  (pendown)	
+  ;nose	
+  (seth -90)	
+  (circle (* 5 sqrt3) 180)	
+  (seth 90)	
+  ;end nose	
+  (penup) (right 90) (forward 30) (seth 90) (pendown)	
+  ;mouth	
+  (circle 40 45) (right 180) (circle -40 90)	
+  ;end mouth	
+  (penup) (right 180) (circle -40 45) (seth 0) (forward 140) (seth -90)	
+  ;left brow	
+  (color "#3D3331")	
+  (begin_fill)	
+  (pendown) (forward 50) (left 45) (forward 20) (left 135) (forward 50) (left 45) (forward 20) 	
+  (end_fill)	
+  ;end left brow	
+  (penup) (seth -90) (backward 30) (seth 90) (pendown)	
+  ;right brow	
+  (begin_fill)	
+  (forward 50) (right 45) (forward 20) (right 135) (forward 50) (right 45) (forward 20) 	
+  (end_fill)	
+  ;end right brow	
+  (penup) (seth 90) (forward 50) (right 45) (forward 20) (seth 180) (forward 20) (right 90) (forward 184) (seth 0)	
+  ;begin hair	
+    (righttriangle 50 100)  (forward 100)  (begin_fill)  (right 30)  (forward 70)  (seth 90)  (forward 140)	
+  (seth 180) (left 30)  (forward 70)  (end_fill)  (seth 180)  (forward 100)  (seth 0)  (righttriangle -50 100)	
+  ;end hair	
+  (seth -90)  (forward 180)  (left 90)  (forward 170)	
 )
 
 (define (glasses)
@@ -288,9 +305,9 @@
   (johns-face)
 
   ; John helmet
-  (lh 500 30)
+  (lh 520 30)
   (color "#C7CAC7")
-  (circle 120 360)
+  (circle 150 360)
 
   ; SCHEME
   (color "#5beb34")
@@ -302,6 +319,7 @@
   (let-e -235 216 12)
 
   ; ALWAYS HAS BEEN
+  (color scheme-red)
   (let-a -120  350 60)
   (let-l -80   350 60)
   (let-w -55   353 60)
